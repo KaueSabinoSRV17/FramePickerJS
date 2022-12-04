@@ -1,0 +1,23 @@
+{
+  "name": "framepickerjs",
+  "version": "1.0.0",
+  "description": "Little web scrapping project that is gonna make me finally put my FGC web site going. It's gonna use Puppeteer to get the data and Prisma to save on a database (Most likely Postgre)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaueSabinoSRV17/FramePickerJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaueSabinoSRV17/FramePickerJS/issues"
+  },
+  "homepage": "https://github.com/KaueSabinoSRV17/FramePickerJS#readme",
+  "dependencies": {
+    "puppeteer": "^19.3.0"
+  }
+}
