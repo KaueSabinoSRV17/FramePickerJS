@@ -1,5 +1,8 @@
 import puppeteer from 'puppeteer';
+import { PrismaClient } from '@prisma/client'
 import { Game } from './models/game';
+
+const prisma = new PrismaClient()
 
 async function gettingAllTheGamesData() {
 
@@ -47,9 +50,19 @@ async function gettingAllTheGamesData() {
 
     await browser.close()
 
-    return resultElement
+    const gamesOnDatabase = resultElement.forEach(async game => {
+        await prisma.game.create({
+            data: {...game}
+        })
+    })
 
+    console.log(gamesOnDatabase)
+    return gamesOnDatabase
 }
 
-gettingAllTheGamesData()
-    .then(r => console.log(r))
+//gettingAllTheGamesData();
+
+(async () => {
+   const games = await prisma.game.findMany() 
+   console.log(games)
+})()
